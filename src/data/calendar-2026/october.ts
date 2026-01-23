@@ -19,8 +19,8 @@ export const october2026 = {
     { date: 13, day: "మంగళ", festivals: [], panchangam: { tithi: "తదియ రా.11:28", nakshatram: "విశాఖ తె.01:42", sunrise: "", sunset: "", rahukalam: "5:54 - 7:37", yamagandam: "6:05 - 7:50", gulika: "" } },
     { date: 14, day: "బుధ", festivals: [], panchangam: { tithi: "చవితి తె.01:13", nakshatram: "అనూరాధ మ.04:03", sunrise: "", sunset: "", rahukalam: "6:05 - 7:50", yamagandam: "10:17 - 12:04", gulika: "" } },
 
-    { date: 15, day: "గురు", festivals: ["సరస్వతి పూజ ప్రారంభం"], panchangam: { tithi: "పంచమి తె.03:25", nakshatram: "జ్యేష్ట మ.06:47", sunrise: "", sunset: "", rahukalam: "10:17 - 12:04", yamagandam: "", gulika: "" } },
-    { date: 16, day: "శుక్ర", festivals: ["సరస్వతి పూజ"], panchangam: { tithi: "షష్టి ఉ.05:54", nakshatram: "జ్యేష్ట ఉ.06:47", sunrise: "", sunset: "", rahukalam: "10:17 - 12:04", yamagandam: "7:58 - 9:46", gulika: "" } },
+    { date: 15, day: "గురు", festivals: [], panchangam: { tithi: "పంచమి తె.03:25", nakshatram: "జ్యేష్ట మ.06:47", sunrise: "", sunset: "", rahukalam: "10:17 - 12:04", yamagandam: "", gulika: "" } },
+    { date: 16, day: "శుక్ర", festivals: ["సరస్వతి పూజ ప్రారంభం"], panchangam: { tithi: "షష్టి ఉ.05:54", nakshatram: "జ్యేష్ట ఉ.06:47", sunrise: "", sunset: "", rahukalam: "10:17 - 12:04", yamagandam: "7:58 - 9:46", gulika: "" } },
     { date: 17, day: "శని", festivals: [], panchangam: { tithi: "సప్తమి తె.08:28", nakshatram: "మూల ఉ.09:47", sunrise: "", sunset: "", rahukalam: "7:58 - 9:46", yamagandam: "8:35 - 10:23", gulika: "" } },
     { date: 18, day: "ఆది", festivals: ["దుర్గాష్టమి"], panchangam: { tithi: "సప్తమి ఉ.08:28", nakshatram: "పూర్వాషాఢ మ.12:41", sunrise: "", sunset: "", rahukalam: "8:35 - 10:23", yamagandam: "9:44 - 11:31", gulika: "" } },
     { date: 19, day: "సోమ", festivals: ["మహర్నవమి"], panchangam: { tithi: "అష్టమి ఉ.10:52", nakshatram: "ఉత్తరాషాఢ మ.03:38", sunrise: "", sunset: "", rahukalam: "9:44 - 11:31", yamagandam: "8:02 - 9:48", gulika: "" } },

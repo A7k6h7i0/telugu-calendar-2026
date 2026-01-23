@@ -25,7 +25,7 @@ export const august2026 = {
     { date: 18, day: "మంగళ", festivals: [], panchangam: { tithi: "షష్టి సా.05:51", nakshatram: "స్వాతి మ.06:46", sunrise: "", sunset: "", rahukalam: "10:59 - 12:42", yamagandam: "", gulika: "" } },
     { date: 19, day: "బుధ", festivals: [], panchangam: { tithi: "సప్తమి సా.07:20", nakshatram: "స్వాతి ఉ.06:46", sunrise: "", sunset: "", rahukalam: "10:59 - 12:42", yamagandam: "12:55 - 2:40", gulika: "" } },
     { date: 20, day: "గురు", festivals: [], panchangam: { tithi: "అష్టమి రా.09:18", nakshatram: "విశాఖ ఉ.09:08", sunrise: "", sunset: "", rahukalam: "12:55 - 2:40", yamagandam: "3:22", gulika: "" } },
-    { date: 21, day: "శుక్ర", festivals: [], panchangam: { tithi: "నవమి రా.11:36", nakshatram: "అనూరాధ ఉ.11:52", sunrise: "", sunset: "", rahukalam: "1:35 - 3:22", yamagandam: "6:09 - 7:57", gulika: "" } },
+    { date: 21, day: "శుక్ర", festivals: ["వరలక్ష్మీ వ్రతం"], panchangam: { tithi: "నవమి రా.11:36", nakshatram: "అనూరాధ ఉ.11:52", sunrise: "", sunset: "", rahukalam: "1:35 - 3:22", yamagandam: "6:09 - 7:57", gulika: "" } },
 
     { date: 22, day: "శని", festivals: ["తిరుమల శ్రీవారి పవిత్రోత్సవ ప్రారంభం"], panchangam: { tithi: "దశమి తె.02:00", nakshatram: "జ్యేష్ట మ.02:49", sunrise: "", sunset: "", rahukalam: "6:09 - 7:57", yamagandam: "11:47 - 1:35", gulika: "" } },
     { date: 23, day: "ఆది", festivals: ["శ్రావణ పుత్రద ఏకాదశ"], panchangam: { tithi: "ఏకాదశి తె.04:19", nakshatram: "మూల సా.05:44", sunrise: "", sunset: "", rahukalam: "11:47 - 1:35", yamagandam: "5:44 - 6:12", gulika: "" } },

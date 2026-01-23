@@ -119,6 +119,21 @@ export default function HomePage() {
     return null;
   };
 
+  // Helper function to check if date has Ekadashi
+  const hasEkadashi = (date: number) => {
+    const dayData = currentMonth.days.find((d) => d.date === date);
+    if (!dayData) return false;
+
+    return (
+      dayData.panchangam.tithi.includes("ఏకాదశి") ||
+      dayData.panchangam.tithi.toLowerCase().includes("ekadashi") ||
+      dayData.festivals.some(
+        (f) =>
+          f.includes("ఏకాదశి") || f.toLowerCase().includes("ekadashi")
+      )
+    );
+  };
+
   // Build calendar grid properly aligned to weekdays
   const buildCalendarGrid = () => {
     const firstDay = currentMonth.days[0];
@@ -142,15 +157,16 @@ export default function HomePage() {
     <div
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-white pb-24"
+      className="min-h-screen bg-gradient-to-br from-slate-700 via-slate-600 to-gray-700 pb-24"
     >
       {/* HEADER - Mobile First */}
       <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg">
         <div className="text-center pt-4 pb-2">
-          <h1 className="text-2xl font-extrabold tracking-wide">
-            తెలుగు క్యాలెండర్
+          <h1 className="text-3xl font-extrabold tracking-wide leading-tight">
+            తెలుగు క్యాలెండర్ <br />
+            TELUGU CALENDER
           </h1>
-          <p className="text-sm font-bold mt-1 tracking-wider">
+          <p className="text-base font-serif font-bold mt-1.5 tracking-widest" style={{ letterSpacing: '0.15em' }}>
             by JKV JANARDHAN
           </p>
         </div>
@@ -179,8 +195,8 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* CALENDAR GRID - Mobile Optimized with Background */}
-      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 shadow-lg p-3 border-4 border-orange-400">
+      {/* CALENDAR GRID - Mobile Optimized with Updated Background */}
+      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-200 shadow-lg p-3 border-4 border-orange-500">
         {/* WEEK DAYS HEADER - Styled with English above Telugu */}
         <div className="grid grid-cols-7 gap-1 mb-2">
           {WEEK_DAYS.map((day, i) => (
@@ -218,6 +234,7 @@ export default function HomePage() {
               monthIndex === todayMonthIndex &&
               day.date === todayDate;
             const moonPhase = getMoonPhase(day.date);
+            const isEkadashi = hasEkadashi(day.date);
 
             return (
               <button
@@ -237,13 +254,24 @@ export default function HomePage() {
                 `}
               >
                 {day.date}
+                
+                {/* Moon Phase Indicator - Larger Size */}
                 {moonPhase && (
                   <div className="absolute top-0.5 right-0.5">
                     {moonPhase === "pournami" ? (
-                      <div className="w-2 h-2 rounded-full bg-white shadow-sm"></div>
+                      <div className="w-3.5 h-3.5 rounded-full bg-white shadow-md border border-yellow-300"></div>
                     ) : (
-                      <div className="w-2 h-2 rounded-full bg-black border border-white"></div>
+                      <div className="w-3.5 h-3.5 rounded-full bg-black border-2 border-white shadow-md"></div>
                     )}
+                  </div>
+                )}
+                
+                {/* Ekadashi Indicator - Lord Shiva Trishul */}
+                {isEkadashi && (
+                  <div className="absolute top-0.5 left-0.5">
+                    <span className="text-base drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))' }}>
+                      🔱
+                    </span>
                   </div>
                 )}
               </button>
