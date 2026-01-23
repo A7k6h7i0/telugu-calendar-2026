@@ -34,7 +34,7 @@ export const july2026 = {
     { date: 26, day: "ఆది", festivals: [], panchangam: { tithi: "ద్వాదశి మ.01:56", nakshatram: "కృష్ణ ఉ.07:34", sunrise: "", sunset: "", rahukalam: "10:54 - 12:42", yamagandam: "4:32 - 8:39", gulika: "" } },
     { date: 27, day: "సోమ", festivals: [], panchangam: { tithi: "త్రయోదశి సా.04:15", nakshatram: "మూల ఉ.10:21", sunrise: "", sunset: "", rahukalam: "4:32 - 6:20", yamagandam: "8:39 - 10:27", gulika: "" } },
     { date: 28, day: "మంగళ", festivals: [], panchangam: { tithi: "చతుర్దశి సా.06:19", nakshatram: "పూర్వాషాఢ మ.01:11", sunrise: "", sunset: "", rahukalam: "9:09 - 10:56", yamagandam: "11:46 - 10:00", gulika: "" } },
-    { date: 29, day: "బుధ", festivals: [], panchangam: { tithi: "పూర్ణిమ రా.08:05", nakshatram: "ఉత్తరాషాఢ మ.03:37", sunrise: "", sunset: "", rahukalam: "10:00 - 11:46", yamagandam: "7:58 - 9:42", gulika: "" } },
+    { date: 29, day: "బుధ", festivals: [], panchangam: { tithi: "పౌర్ణమి రా.08:05", nakshatram: "ఉత్తరాషాఢ మ.03:37", sunrise: "", sunset: "", rahukalam: "10:00 - 11:46", yamagandam: "7:58 - 9:42", gulika: "" } },
     { date: 30, day: "గురు", festivals: [], panchangam: { tithi: "పాడ్యమి రా.09:30", nakshatram: "శ్రవణం సా.05:41", sunrise: "", sunset: "", rahukalam: "7:58 - 9:42", yamagandam: "10:00 - 11:43", gulika: "" } },
     { date: 31, day: "శుక్ర", festivals: [], panchangam: { tithi: "విదియ రా.10:32", nakshatram: "ధనిష్ట సా.07:26", sunrise: "", sunset: "", rahukalam: "10:00 - 11:43", yamagandam: "5:30 - 4:42", gulika: "" } }
   ]

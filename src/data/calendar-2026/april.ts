@@ -4,12 +4,12 @@ export const april2026 = {
   samvatsaram: "విశ్వావసు",
   days: [
     { date: 1, day: "బుధ", festivals: [], panchangam: { tithi: "చతుర్దశి ఉ.07:06", nakshatram: "ఉత్తర ఫల్గుణి సా.04:17", sunrise: "", sunset: "", rahukalam: "10:49 - 12:29", yamagandam: "1:09 - 2:50", gulika: "" } },
-    { date: 2, day: "గురు", festivals: [], panchangam: { tithi: "పూర్ణిమ ఉ.07:41", nakshatram: "హస్త సా.05:38", sunrise: "", sunset: "", rahukalam: "1:09 - 2:50", yamagandam: "2:13 - 3:56", gulika: "" } },
+    { date: 2, day: "గురు", festivals: [], panchangam: { tithi: "పౌర్ణమి ఉ.07:41", nakshatram: "హస్త సా.05:38", sunrise: "", sunset: "", rahukalam: "1:09 - 2:50", yamagandam: "2:13 - 3:56", gulika: "" } },
     { date: 3, day: "శుక్ర", festivals: [], panchangam: { tithi: "పాడ్యమి ఉ.08:42 సా.07:24", nakshatram: "", sunrise: "", sunset: "", rahukalam: "1:30 - 3:15", yamagandam: "", gulika: "" } },
     { date: 4, day: "శని", festivals: [], panchangam: { tithi: "విదియ ఉ.10:09", nakshatram: "స్వాతి సా.09:35", sunrise: "", sunset: "", rahukalam: "1:30 - 3:15", yamagandam: "3:46 - 5:32", gulika: "" } },
     { date: 5, day: "ఆది", festivals: ["బాబూ జగజ్జీవన్ రామ్ జయంతి", "ఈస్టర్ సండే"], panchangam: { tithi: "తదియ మ.12:00", nakshatram: "విశాఖ తె.12:07", sunrise: "", sunset: "", rahukalam: "", yamagandam: "", gulika: "" } },
     { date: 6, day: "సోమ", festivals: [], panchangam: { tithi: "చవితి మ.02:11", nakshatram: "అనూరాధ", sunrise: "", sunset: "", rahukalam: "9:13", yamagandam: "", gulika: "" } },
-    { date: 7, day: "మంగళ", festivals: [], panchangam: { tithi: "పంచమి సా.04:35", nakshatram: "జ్యేష్ట ఉ.05:53", sunrise: "", sunset: "", rahukalam: "9:13 - 11:01", yamagandam: "6:59 - 8:47", gulika: "" } },
+    { date: 7, day: "మంగళ", festivals: ["వరాహ జయంతి"], panchangam: { tithi: "పంచమి సా.04:35", nakshatram: "జ్యేష్ట ఉ.05:53", sunrise: "", sunset: "", rahukalam: "9:13 - 11:01", yamagandam: "6:59 - 8:47", gulika: "" } },
 
     { date: 8, day: "బుధ", festivals: [], panchangam: { tithi: "షష్టి సా.07:02", nakshatram: "మూల ఉ.08:48", sunrise: "", sunset: "", rahukalam: "2:51 - 4:39", yamagandam: "6:59 - 7:47", gulika: "" } },
     { date: 9, day: "గురు", festivals: [], panchangam: { tithi: "సా.09:20", nakshatram: "మూల ఉ.08:48", sunrise: "", sunset: "", rahukalam: "2:51 - 4:39", yamagandam: "7:28 - 9:15", gulika: "" } },

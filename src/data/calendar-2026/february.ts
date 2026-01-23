@@ -8,7 +8,7 @@ export const february2026 = {
       day: "ఆది",
       festivals: ["మాఘపూర్ణిమ", "వ్యాస పూర్ణిమ"],
       panchangam: {
-        tithi: "పూర్ణిమ ఉ.03:39",
+        tithi: "పౌర్ణమి ఉ.03:39",
         nakshatram: "పుష్యమి రా.11:57",
         sunrise: "",
         sunset: "",
@@ -104,7 +104,7 @@ export const february2026 = {
   {
     date: 8,
     day: "ఆది",
-    festivals: ["తిస్రోష్టకాః", "భానుసప్తమి"],
+    festivals: ["భానుసప్తమి"], //"తిస్రోష్టకాః",
     panchangam: {
       tithi: "సప్తమి",
       nakshatram: "స్వాతి",
@@ -286,7 +286,7 @@ export const february2026 = {
   {
     date: 21,
     day: "శని",
-    festivals: ["శాంతిచతుర్ధి"],
+    festivals: [],//"శాంతిచతుర్ధి"
     panchangam: {
       tithi: "చవితి",
       nakshatram: "రేవతి",
@@ -314,7 +314,7 @@ export const february2026 = {
   {
     date: 23,
     day: "సోమ",
-    festivals: ["లక్ష్మీ సితాపూజ", "ఆమలకం"],
+    festivals: [],//"లక్ష్మీ సితాపూజ", "ఆమలకం"
     panchangam: {
       tithi: "షష్టి",
       nakshatram: "",

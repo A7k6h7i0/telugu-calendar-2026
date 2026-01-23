@@ -5,8 +5,8 @@ export const march2026 = {
   days: [
     { date: 1, day: "ఆది", festivals: [], panchangam: { tithi: "త్రయోదశి సా.07:09", nakshatram: "పుష్వమి ఉ.08:34", sunrise: "", sunset: "", rahukalam: "4:30 - 6:00", yamagandam: "12:00 - 1:30", gulika: "" } },
     { date: 2, day: "సోమ", festivals: [], panchangam: { tithi: "చతుర్దశి సా.05:56", nakshatram: "ఆశ్లేష ఉ.07:51", sunrise: "", sunset: "", rahukalam: "7:30 - 9:00", yamagandam: "10:30 - 12:00", gulika: "" } },
-    { date: 3, day: "మంగళ", festivals: [], panchangam: { tithi: "పూర్ణిమ సా.05:07", nakshatram: "మఖ ఉ.07:31", sunrise: "", sunset: "", rahukalam: "3:00 - 4:30", yamagandam: "9:00 - 10:30", gulika: "" } },
-    { date: 4, day: "బుధ", festivals: ["హోలీ పండుగ"], panchangam: { tithi: "పాడ్యమి సా.04:49", nakshatram: "పూర్వఫల్గుణి ఉ.07:38", sunrise: "", sunset: "", rahukalam: "12:00 - 1:30", yamagandam: "7:30 - 9:00", gulika: "" } },
+    { date: 3, day: "మంగళ", festivals: ["హోలీ పండుగ"], panchangam: { tithi: "పౌర్ణమి సా.05:07", nakshatram: "మఖ ఉ.07:31", sunrise: "", sunset: "", rahukalam: "3:00 - 4:30", yamagandam: "9:00 - 10:30", gulika: "" } },
+    { date: 4, day: "బుధ", festivals: [], panchangam: { tithi: "పాడ్యమి సా.04:49", nakshatram: "పూర్వఫల్గుణి ఉ.07:38", sunrise: "", sunset: "", rahukalam: "12:00 - 1:30", yamagandam: "7:30 - 9:00", gulika: "" } },
     { date: 5, day: "గురు", festivals: [], panchangam: { tithi: "విదియ సా.05:04", nakshatram: "ఉత్తరఫల్గుణి ఉ.08:17", sunrise: "", sunset: "", rahukalam: "1:30 - 3:00", yamagandam: "6:00 - 7:30", gulika: "" } },
     { date: 6, day: "శుక్ర", festivals: [], panchangam: { tithi: "తదియ సా.05:53", nakshatram: "హస్త ఉ.09:29", sunrise: "", sunset: "", rahukalam: "10:30 - 12:00", yamagandam: "3:00 - 4:30", gulika: "" } },
     { date: 7, day: "శని", festivals: [], panchangam: { tithi: "చవితి సా.07:17", nakshatram: "చిత్త ఉ.11:15", sunrise: "", sunset: "", rahukalam: "9:00 - 10:30", yamagandam: "1:30 - 3:00", gulika: "" } },
@@ -23,11 +23,11 @@ export const march2026 = {
     { date: 16, day: "సోమ", festivals: [], panchangam: { tithi: "ద్వాదశి ఉ.09:41", nakshatram: "ధనిష్ట ఉ.06:22", sunrise: "", sunset: "", rahukalam: "7:30 - 9:00", yamagandam: "10:30 - 12:00", gulika: "" } },
     { date: 17, day: "మంగళ", festivals: [], panchangam: { tithi: "త్రయోదశి ఉ.09:23", nakshatram: "శతభిషం ఉ.06:09", sunrise: "", sunset: "", rahukalam: "3:00 - 4:30", yamagandam: "9:00 - 10:30", gulika: "" } },
     { date: 18, day: "బుధ", festivals: [], panchangam: { tithi: "చతుర్దశి ఉ.08:25", nakshatram: "పూర్వాభాద్ర ఉ.05:21", sunrise: "", sunset: "", rahukalam: "12:00 - 1:30", yamagandam: "7:30 - 9:00", gulika: "" } },
-    { date: 19, day: "గురు", festivals: [], panchangam: { tithi: "అమావాస్య ఉ.06:53", nakshatram: "ఉత్తరాభాద్ర ఉ.04:04", sunrise: "", sunset: "", rahukalam: "1:30 - 3:00", yamagandam: "6:00 - 7:30", gulika: "" } },
+    { date: 19, day: "గురు", festivals: ["ఉగాది"], panchangam: { tithi: "అమావాస్య ఉ.06:53", nakshatram: "ఉత్తరాభాద్ర ఉ.04:04", sunrise: "", sunset: "", rahukalam: "1:30 - 3:00", yamagandam: "6:00 - 7:30", gulika: "" } },
 
-    { date: 20, day: "శుక్ర", festivals: ["ఉగాది", "రంజాన్ పండుగ"], panchangam: { tithi: "విదియ తె.02:31", nakshatram: "రేవతి", sunrise: "", sunset: "", rahukalam: "10:30 - 12:00", yamagandam: "3:00 - 4:30", gulika: "" } },
+    { date: 20, day: "శుక్ర", festivals: [], panchangam: { tithi: "విదియ తె.02:31", nakshatram: "రేవతి", sunrise: "", sunset: "", rahukalam: "10:30 - 12:00", yamagandam: "3:00 - 4:30", gulika: "" } },
 
-    { date: 21, day: "శని", festivals: [], panchangam: { tithi: "తదియ రా.11:56", nakshatram: "అశ్విని", sunrise: "", sunset: "", rahukalam: "9:00 - 10:30", yamagandam: "1:30 - 3:00", gulika: "" } },
+    { date: 21, day: "శని", festivals: ["రంజాన్ పండుగ"], panchangam: { tithi: "తదియ రా.11:56", nakshatram: "అశ్విని", sunrise: "", sunset: "", rahukalam: "9:00 - 10:30", yamagandam: "1:30 - 3:00", gulika: "" } },
     { date: 22, day: "ఆది", festivals: [], panchangam: { tithi: "చవితి రా.09:17", nakshatram: "భరణి రా.10:42", sunrise: "", sunset: "", rahukalam: "4:30 - 6:00", yamagandam: "12:00 - 1:30", gulika: "" } },
     { date: 23, day: "సోమ", festivals: [], panchangam: { tithi: "పంచమి సా.06:38", nakshatram: "కృతిక రా.08:49", sunrise: "", sunset: "", rahukalam: "7:30 - 9:00", yamagandam: "10:30 - 12:00", gulika: "" } },
     { date: 24, day: "మంగళ", festivals: [], panchangam: { tithi: "షష్టి సా.04:08", nakshatram: "కృతిక సా.07:04", sunrise: "", sunset: "", rahukalam: "3:00 - 4:30", yamagandam: "9:00 - 10:30", gulika: "" } },

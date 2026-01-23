@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import { teluguMonths } from "../../services/api";
 
 import {
@@ -33,18 +33,24 @@ const MONTHS_2026 = [
 
 export default function FestivalsPage() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  
+  // Get selected month from URL parameter, default to current month
+  const urlMonthIndex = searchParams.get("month");
+  const selectedMonthIndex = urlMonthIndex ? parseInt(urlMonthIndex) : new Date().getMonth();
+  
+  // Get the selected month data
+  const selectedMonth = MONTHS_2026[selectedMonthIndex];
 
-  const groupedFestivals: Record<number, { date: number; name: string }[]> = {};
-
-  MONTHS_2026.forEach((month, mIndex) => {
-    month.days.forEach((day) => {
-      if (day.festivals?.length) {
-        if (!groupedFestivals[mIndex]) groupedFestivals[mIndex] = [];
-        day.festivals.forEach((f: string) =>
-          groupedFestivals[mIndex].push({ date: day.date, name: f })
-        );
-      }
-    });
+  // Group festivals only for the selected month
+  const monthFestivals: { date: number; name: string }[] = [];
+  
+  selectedMonth.days.forEach((day) => {
+    if (day.festivals?.length) {
+      day.festivals.forEach((f: string) =>
+        monthFestivals.push({ date: day.date, name: f })
+      );
+    }
   });
 
   return (
@@ -52,51 +58,63 @@ export default function FestivalsPage() {
       {/* HEADER */}
       <div className="fixed top-0 left-0 right-0 bg-gradient-to-r from-orange-600 to-red-600 text-white px-4 py-4 shadow-xl z-10">
         <div className="flex items-center justify-between">
-          <button onClick={() => navigate("/")} className="text-xl">◀</button>
+          <button onClick={() => navigate("/")} className="text-xl font-bold">
+            ◀
+          </button>
           <div className="text-center">
-            <h1 className="text-lg font-bold">పండుగలు – 2026</h1>
-            <p className="text-xs opacity-80">విశ్వావసు సంవత్సరం</p>
+            <h1 className="text-xl font-bold">
+              {teluguMonths[selectedMonthIndex]} పండుగలు
+            </h1>
+            <p className="text-xs opacity-90">
+              {selectedMonth.samvatsaram} సంవత్సరం
+            </p>
           </div>
           <div className="w-6"></div>
         </div>
       </div>
 
       {/* CONTENT */}
-      <div className="pt-24 px-4 space-y-8">
-        {Object.keys(groupedFestivals).map((key) => {
-          const monthIndex = Number(key);
-          return (
-            <div key={monthIndex}>
-              <h2 className="text-lg font-bold mb-3 text-orange-700">
-                {teluguMonths[monthIndex]}
-              </h2>
-
-              <div className="space-y-3">
-                {groupedFestivals[monthIndex].map((f, i) => (
-                  <div
-                    key={i}
-                    className="bg-white rounded-xl shadow-md p-4 flex items-center space-x-4 border border-orange-200"
-                  >
-                    <div className="text-2xl">🪔</div>
-                    <div>
-                      <p className="font-bold">{f.name}</p>
-                      <p className="text-xs text-gray-500">
-                        {f.date} {teluguMonths[monthIndex]}
-                      </p>
-                    </div>
-                  </div>
-                ))}
+      <div className="pt-20 px-4">
+        {monthFestivals.length > 0 ? (
+          <div className="space-y-3">
+            {monthFestivals.map((f, i) => (
+              <div
+                key={i}
+                className="bg-white rounded-xl shadow-md p-4 flex items-center space-x-4 border-2 border-orange-200 active:scale-98 transition-transform"
+              >
+                <div className="text-3xl">🪔</div>
+                <div className="flex-1">
+                  <p className="font-bold text-base text-gray-800">{f.name}</p>
+                  <p className="text-sm text-gray-500 mt-1">
+                    {f.date} {teluguMonths[selectedMonthIndex]}
+                  </p>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12">
+            <p className="text-lg text-gray-500">
+              ఈ నెలలో పండుగలు లేవు
+            </p>
+          </div>
+        )}
       </div>
 
       {/* BOTTOM NAV */}
-      <div className="fixed bottom-4 left-4 right-4 bg-white/95 rounded-xl shadow-xl flex justify-around py-3">
-        <button onClick={() => navigate("/")}>హోమ్</button>
-        <button>పంచాంగం</button>
-        <button className="font-bold text-orange-600">పండుగలు</button>
+      <div className="fixed bottom-4 left-4 right-4 bg-white rounded-xl shadow-xl flex justify-around py-3 border-2 border-orange-300">
+        <button
+          onClick={() => navigate("/")}
+          className="font-semibold text-gray-700 text-base active:scale-95 transition-transform"
+        >
+          హోమ్
+        </button>
+        <button className="font-bold text-orange-600 text-base">
+          పండుగలు
+        </button>
+        <button className="font-semibold text-gray-700 text-base active:scale-95 transition-transform">
+          పంచాంగం
+        </button>
       </div>
     </div>
   );

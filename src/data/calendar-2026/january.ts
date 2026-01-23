@@ -36,7 +36,7 @@ export const january2026 = {
       day: "శని",
       festivals: [],
       panchangam: {
-        tithi: "పూర్ణిమ స 03:32",
+        tithi: "పౌర్ణమి స 03:32",
         nakshatram: "ఆర్ద్ర స 05:27",
         sunrise: "3:33 ఉ 4:59",
         sunset: "4:19 ఉ 5:46",
@@ -278,8 +278,7 @@ export const january2026 = {
       date: 20,
       day: "మంగళ",
       festivals: [
-        "చంద్రోదయం",
-        "శ్రీ వాసవి కన్యకా పరమేశ్వరి జయంతి"
+        "చంద్రోదయం"
       ],
       panchangam: {
         tithi: "విదియ ఉ.02:42",

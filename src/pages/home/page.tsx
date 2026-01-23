@@ -81,96 +81,163 @@ export default function HomePage() {
     touchStartX.current = null;
   };
 
-  const startIndex = WEEK_DAYS.indexOf(currentMonth.days[0].day);
+  // Helper function to check if date has Pournami or Amavasya
+  const getMoonPhase = (date: number) => {
+    const dayData = currentMonth.days.find((d) => d.date === date);
+    if (!dayData) return null;
+
+    // Check tithi for Pournami
+    const hasPournami =
+      dayData.panchangam.tithi.includes("పౌర్ణమి") ||
+      dayData.panchangam.tithi.includes("పౌర్ణిమ") ||
+      dayData.panchangam.tithi.toLowerCase().includes("pournami") ||
+      dayData.festivals.some(
+        (f) =>
+          f.includes("పౌర్ణమి") ||
+          f.includes("పౌర్ణిమ") ||
+          f.toLowerCase().includes("pournami")
+      );
+
+    const hasAmavasya =
+      dayData.panchangam.tithi.includes("అమావాస్య") ||
+      dayData.panchangam.tithi.toLowerCase().includes("amavasya") ||
+      dayData.festivals.some(
+        (f) =>
+          f.includes("అమావాస్య") || f.toLowerCase().includes("amavasya")
+      );
+
+    if (hasPournami) return "pournami";
+    if (hasAmavasya) return "amavasya";
+    return null;
+  };
+
+  // Build calendar grid properly aligned to weekdays
+  const buildCalendarGrid = () => {
+    const firstDay = currentMonth.days[0];
+    const startDayIndex = WEEK_DAYS.indexOf(firstDay.day);
+
+    // Create 6 weeks (42 cells) to cover all possibilities
+    const grid = Array(42).fill(null);
+
+    currentMonth.days.forEach((day, index) => {
+      grid[startDayIndex + index] = day;
+    });
+
+    return grid;
+  };
+
+  const calendarGrid = buildCalendarGrid();
 
   return (
     <div
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="min-h-screen bg-gradient-to-br from-amber-50 via-white to-orange-50 pb-28"
+      className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-white pb-24"
     >
-      {/* HEADER */}
-      <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-xl">
-        <div className="flex items-center justify-between px-4 py-4">
-          <button onClick={goPrevMonth} className="text-xl">◀</button>
+      {/* HEADER - Mobile First */}
+      <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg">
+        <div className="text-center pt-4 pb-2">
+          <h1 className="text-2xl font-extrabold tracking-wide">
+            తెలుగు క్యాలెండర్
+          </h1>
+          <p className="text-sm font-bold mt-1 tracking-wider">
+            by JKV JANARDHAN
+          </p>
+        </div>
+
+        <div className="flex items-center justify-between px-4 py-3">
+          <button
+            onClick={goPrevMonth}
+            className="text-2xl font-bold active:scale-90 transition-transform px-2"
+          >
+            ◀
+          </button>
 
           <div className="text-center">
-            <div className="text-lg font-bold">
-              {currentMonth.month} – 2026
-            </div>
+            <div className="text-lg font-bold">{currentMonth.month} – 2026</div>
             <div className="text-xs opacity-90">
               {currentMonth.samvatsaram} సంవత్సరం
             </div>
           </div>
 
-          <button onClick={goNextMonth} className="text-xl">▶</button>
+          <button
+            onClick={goNextMonth}
+            className="text-2xl font-bold active:scale-90 transition-transform px-2"
+          >
+            ▶
+          </button>
         </div>
       </div>
 
-      {/* WEEK DAYS */}
-      <div className="grid grid-cols-7 text-center text-xs py-3 font-semibold text-gray-700">
-        {WEEK_DAYS.map((d, i) => (
-          <div key={d} className={i === 0 ? "text-red-500" : ""}>
-            {d}
-          </div>
-        ))}
-      </div>
-
-      {/* CALENDAR GRID */}
-      <div className="mx-4 rounded-3xl bg-white shadow-xl p-4 border border-orange-200">
-        <div className="grid grid-cols-7 gap-2">
-          {Array.from({ length: startIndex }).map((_, i) => (
-            <div key={`empty-${i}`} />
+      {/* CALENDAR GRID - Mobile Optimized with Background */}
+      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 shadow-lg p-3 border-4 border-orange-400">
+        {/* WEEK DAYS HEADER */}
+        <div className="grid grid-cols-7 gap-1 mb-2">
+          {WEEK_DAYS.map((dayName, i) => (
+            <div
+              key={dayName}
+              className={`text-center text-sm font-extrabold py-2 ${
+                i === 0 ? "text-red-600" : "text-gray-800"
+              }`}
+            >
+              {dayName}
+            </div>
           ))}
+        </div>
 
-          {currentMonth.days.map((day) => {
+        {/* DATES GRID - Properly Aligned with Rectangular Boxes */}
+        <div className="grid grid-cols-7 gap-1">
+          {calendarGrid.map((day, index) => {
+            if (!day) {
+              return <div key={`empty-${index}`} className="aspect-square" />;
+            }
+
             const isSelected = day.date === selectedDate;
             const isSun = day.day === "ఆది";
             const isToday =
               is2026 &&
               monthIndex === todayMonthIndex &&
               day.date === todayDate;
+            const moonPhase = getMoonPhase(day.date);
 
             return (
               <button
-                key={day.date}
+                key={`${day.date}-${index}`}
                 onClick={() => setSelectedDate(day.date)}
                 className={`
-                  relative aspect-square rounded-xl flex items-center justify-center
-                  text-sm font-bold transition-all border
+                  relative aspect-square rounded-lg flex items-center justify-center
+                  text-lg font-extrabold transition-all shadow-md
+                  active:scale-95
                   ${
                     isSelected
-                      ? "bg-orange-500 text-white border-orange-600 shadow-lg"
-                      : "bg-orange-50 border-orange-200"
+                      ? "bg-orange-500 text-white scale-105 shadow-lg"
+                      : "bg-gradient-to-br from-gray-600 to-gray-700 text-white"
                   }
-                  ${isSun ? "text-red-500" : "text-gray-800"}
-                  ${isToday ? "ring-2 ring-yellow-400" : ""}
+                  ${isSun && !isSelected ? "!text-red-400" : ""}
+                  ${isToday ? "ring-4 ring-yellow-400 ring-offset-2" : ""}
                 `}
               >
                 {day.date}
+                {moonPhase && (
+                  <div className="absolute top-0.5 right-0.5">
+                    {moonPhase === "pournami" ? (
+                      <div className="w-2 h-2 rounded-full bg-white shadow-sm"></div>
+                    ) : (
+                      <div className="w-2 h-2 rounded-full bg-black border border-white"></div>
+                    )}
+                  </div>
+                )}
               </button>
             );
           })}
         </div>
       </div>
 
-      {/* DETAILS CARD */}
+      {/* DETAILS CARD - Mobile Optimized */}
       {selectedDayData && (
-        <div className="mx-4 mt-5 rounded-3xl bg-white shadow-xl p-5 border border-orange-200">
-          <div className="text-center font-bold text-lg mb-4 text-orange-700">
+        <div className="mx-3 mt-4 rounded-2xl bg-white shadow-lg p-4 border-2 border-orange-300">
+          <div className="text-center font-bold text-xl mb-3 text-orange-700">
             {selectedDayData.date} – {selectedDayData.day}
-          </div>
-
-          {/* 🌅 SUNRISE / SUNSET */}
-          <div className="grid grid-cols-2 gap-4 mb-5">
-            <div className="rounded-2xl bg-orange-50 border border-orange-200 p-4 text-center">
-              <p className="text-xs text-gray-500">సూర్యోదయం</p>
-              <p className="text-lg font-bold text-orange-600">06:05</p>
-            </div>
-            <div className="rounded-2xl bg-orange-50 border border-orange-200 p-4 text-center">
-              <p className="text-xs text-gray-500">సూర్యాస్తమయం</p>
-              <p className="text-lg font-bold text-orange-600">06:30</p>
-            </div>
           </div>
 
           {/* FESTIVALS */}
@@ -179,7 +246,7 @@ export default function HomePage() {
               {selectedDayData.festivals.map((festival, i) => (
                 <span
                   key={i}
-                  className="px-4 py-1 rounded-full bg-orange-100 text-orange-700 text-xs font-semibold"
+                  className="px-3 py-1.5 rounded-full bg-orange-100 text-orange-700 text-xs font-bold border border-orange-300"
                 >
                   {festival}
                 </span>
@@ -188,32 +255,65 @@ export default function HomePage() {
           )}
 
           {/* PANCHANG DETAILS */}
-          <div className="grid grid-cols-2 gap-4 text-sm text-gray-800">
-            <div>
-              <p className="text-xs text-gray-500">తిథి</p>
-              <p className="font-semibold">{selectedDayData.panchangam.tithi}</p>
+          <div className="grid grid-cols-2 gap-3 text-sm text-gray-800 mb-4">
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <p className="text-xs text-gray-600 mb-1">తిథి</p>
+              <p className="font-bold text-gray-800">
+                {selectedDayData.panchangam.tithi}
+              </p>
             </div>
-            <div>
-              <p className="text-xs text-gray-500">నక్షత్రం</p>
-              <p className="font-semibold">{selectedDayData.panchangam.nakshatram}</p>
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <p className="text-xs text-gray-600 mb-1">నక్షత్రం</p>
+              <p className="font-bold text-gray-800">
+                {selectedDayData.panchangam.nakshatram}
+              </p>
             </div>
-            <div>
-              <p className="text-xs text-gray-500">రాహుకాలం</p>
-              <p className="font-semibold">{selectedDayData.panchangam.rahukalam}</p>
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <p className="text-xs text-gray-600 mb-1">రాహుకాలం</p>
+              <p className="font-bold text-gray-800">
+                {selectedDayData.panchangam.rahukalam}
+              </p>
             </div>
-            <div>
-              <p className="text-xs text-gray-500">యమగండం</p>
-              <p className="font-semibold">{selectedDayData.panchangam.yamagandam}</p>
+            <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
+              <p className="text-xs text-gray-600 mb-1">యమగండం</p>
+              <p className="font-bold text-gray-800">
+                {selectedDayData.panchangam.yamagandam}
+              </p>
+            </div>
+          </div>
+
+          {/* SUNRISE / SUNSET */}
+          <div className="grid grid-cols-2 gap-3">
+            <div className="rounded-lg bg-gradient-to-br from-orange-100 to-orange-50 border-2 border-orange-300 p-3 text-center">
+              <p className="text-xs text-gray-600 mb-1 font-semibold">
+                సూర్యోదయం
+              </p>
+              <p className="text-xl font-extrabold text-orange-700">06:05</p>
+            </div>
+            <div className="rounded-lg bg-gradient-to-br from-orange-100 to-orange-50 border-2 border-orange-300 p-3 text-center">
+              <p className="text-xs text-gray-600 mb-1 font-semibold">
+                సూర్యాస్తమయం
+              </p>
+              <p className="text-xl font-extrabold text-orange-700">06:30</p>
             </div>
           </div>
         </div>
       )}
 
-      {/* BOTTOM NAV */}
-      <div className="fixed bottom-4 left-4 right-4 bg-white rounded-xl shadow-xl flex justify-around py-3 border border-orange-200">
-        <button className="font-bold text-orange-600">హోమ్</button>
-        <button onClick={() => navigate("/festivals")}>పండుగలు</button>
-        <button>పంచాంగం</button>
+      {/* BOTTOM NAV - Mobile First */}
+      <div className="fixed bottom-3 left-3 right-3 bg-white rounded-xl shadow-lg flex justify-around py-3 border-2 border-orange-300">
+        <button className="font-bold text-orange-600 text-base active:scale-95 transition-transform">
+          హోమ్
+        </button>
+        <button
+          onClick={() => navigate(`/festivals?month=${monthIndex}`)}
+          className="font-semibold text-gray-700 text-base active:scale-95 transition-transform"
+        >
+          పండుగలు
+        </button>
+        <button className="font-semibold text-gray-700 text-base active:scale-95 transition-transform">
+          పంచాంగం
+        </button>
       </div>
     </div>
   );
