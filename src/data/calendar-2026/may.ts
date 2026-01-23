@@ -1,7 +1,7 @@
 export const may2026 = {
   month: "మే",
   year: 2026,
-  samvatsaram: "విశ్వావసు",
+  samvatsaram: "పరాభవ",
   days: [
     { date: 1, day: "శుక్ర", festivals: [], panchangam: { tithi: "పౌర్ణమి రా.10:53", nakshatram: "స్వాతి సా.04:35", sunrise: "", sunset: "", rahukalam: "8:24 - 10:09", yamagandam: "10:47 - 12:33", gulika: "" } },
     { date: 2, day: "శని", festivals: [], panchangam: { tithi: "పాడ్యమి మ.12:50", nakshatram: "విశాఖ ఉ.07:09", sunrise: "", sunset: "", rahukalam: "10:47 - 12:33", yamagandam: "", gulika: "" } },

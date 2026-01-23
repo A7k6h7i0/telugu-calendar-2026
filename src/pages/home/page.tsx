@@ -31,7 +31,15 @@ const MONTHS_2026 = [
   december2026,
 ];
 
-const WEEK_DAYS = ["ఆది", "సోమ", "మంగళ", "బుధ", "గురు", "శుక్ర", "శని"];
+const WEEK_DAYS = [
+  { english: "SUN", telugu: "ఆది" },
+  { english: "MON", telugu: "సోమ" },
+  { english: "TUE", telugu: "మంగళ" },
+  { english: "WED", telugu: "బుధ" },
+  { english: "THU", telugu: "గురు" },
+  { english: "FRI", telugu: "శుక్ర" },
+  { english: "SAT", telugu: "శని" },
+];
 
 export default function HomePage() {
   const navigate = useNavigate();
@@ -114,7 +122,9 @@ export default function HomePage() {
   // Build calendar grid properly aligned to weekdays
   const buildCalendarGrid = () => {
     const firstDay = currentMonth.days[0];
-    const startDayIndex = WEEK_DAYS.indexOf(firstDay.day);
+    const startDayIndex = WEEK_DAYS.findIndex(
+      (day) => day.telugu === firstDay.day
+    );
 
     // Create 6 weeks (42 cells) to cover all possibilities
     const grid = Array(42).fill(null);
@@ -171,16 +181,25 @@ export default function HomePage() {
 
       {/* CALENDAR GRID - Mobile Optimized with Background */}
       <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-yellow-100 via-amber-100 to-orange-100 shadow-lg p-3 border-4 border-orange-400">
-        {/* WEEK DAYS HEADER */}
+        {/* WEEK DAYS HEADER - Styled with English above Telugu */}
         <div className="grid grid-cols-7 gap-1 mb-2">
-          {WEEK_DAYS.map((dayName, i) => (
+          {WEEK_DAYS.map((day, i) => (
             <div
-              key={dayName}
-              className={`text-center text-sm font-extrabold py-2 ${
-                i === 0 ? "text-red-600" : "text-gray-800"
-              }`}
+              key={day.telugu}
+              className={`
+                text-center font-extrabold py-1.5 rounded-md flex flex-col items-center justify-center
+                ${i === 0 
+                  ? "bg-red-500 text-white" 
+                  : "bg-amber-200 text-gray-800"
+                }
+              `}
             >
-              {dayName}
+              <div className="text-xs font-bold leading-tight">
+                {day.english}
+              </div>
+              <div className={`leading-tight ${day.telugu === "మంగళ" ? "text-[10px]" : "text-xs"}`}>
+                {day.telugu}
+              </div>
             </div>
           ))}
         </div>

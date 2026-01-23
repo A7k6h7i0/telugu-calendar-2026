@@ -1,7 +1,7 @@
 export const december2026 = {
   month: "డిసెంబర్",
   year: 2026,
-  samvatsaram: "విశ్వావసు",
+  samvatsaram: "పరాభవ",
   days: [
     { date: 1, day: "మంగళ", festivals: [], panchangam: { tithi: "అష్టమి రా.11:14", nakshatram: "మఖ ఉ.09:00", sunrise: "", sunset: "", rahukalam: "9:21 - 10:54", yamagandam: "4:58", gulika: "" } },
     { date: 2, day: "బుధ", festivals: [], panchangam: { tithi: "నవమి రా.10:52", nakshatram: "", sunrise: "", sunset: "", rahukalam: "4:58 - 6:34", yamagandam: "4:15 - 5:53", gulika: "" } },
