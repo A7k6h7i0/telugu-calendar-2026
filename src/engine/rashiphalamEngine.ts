@@ -1,31 +1,32 @@
-type RashiData = {
-  daily: string[];
-  weekly: string[];
-  monthly: string[];
-  yearly: string;
+type RashiphalamBlock = {
+  text: string; // long text (joined)
+  colors?: string[];
+  stats?: Record<string, number>;
 };
 
-type RashiphalamResult = {
-  text: string;
-  stats: Record<string, number>;
+type RashiData = {
+  daily: RashiphalamBlock;
+  weekly: RashiphalamBlock;
+  monthly: RashiphalamBlock;
+  yearly: RashiphalamBlock;
 };
 
 const TYPE_MAP: Record<string, keyof RashiData> = {
-  dhinaphalalu: "daily",
   daily: "daily",
-  varaphalalu: "weekly",
+  dhinaphalalu: "daily",
   weekly: "weekly",
-  masaphalalu: "monthly",
+  varaphalalu: "weekly",
   monthly: "monthly",
-  samvatsaraphalalu: "yearly",
+  masaphalalu: "monthly",
   yearly: "yearly",
+  samvatsaraphalalu: "yearly",
 };
 
 export function getRashiphalam(
   rasi: RashiData | undefined,
   rawType: string,
-  date: Date
-): RashiphalamResult {
+  date: Date = new Date()
+): RashiphalamBlock {
   if (!rasi) {
     return {
       text: "రాశి సమాచారం లభ్యం కావడం లేదు.",
@@ -34,44 +35,41 @@ export function getRashiphalam(
   }
 
   const type = TYPE_MAP[rawType] || "daily";
+  const block = rasi[type];
 
-  // 🔒 SAFE ACCESS
-  if (type === "yearly") {
+  if (!block || !block.text) {
     return {
-      text: rasi.yearly,
-      stats: {
-        ఆరోగ్యం: 80,
-        సంపద: 75,
-        కుటుంబం: 85,
-        వృత్తి: 90,
-      },
-    };
-  }
-
-  const list = rasi[type];
-
-  if (!Array.isArray(list) || list.length === 0) {
-    return {
-      text: "ఈ విభాగానికి రాశి ఫలితాలు లభ్యం కావడం లేదు.",
+      text: "ఈ విభాగానికి రాశి ఫలాలు లభ్యం కావడం లేదు.",
       stats: {},
     };
   }
 
-  // ✅ deterministic daily change
-  const index =
-    type === "daily"
-      ? date.getDate() % list.length
-      : type === "weekly"
-      ? Math.floor(date.getDate() / 7) % list.length
-      : date.getMonth() % list.length;
+  // 🔁 ROTATION LOGIC
+  // Split by double newline (same format you used)
+  const lines = block.text
+    .split("\n\n")
+    .map((l) => l.trim())
+    .filter(Boolean);
+
+  if (lines.length === 0) {
+    return block;
+  }
+
+  let index = 0;
+
+  if (type === "daily") {
+    index = date.getDate() % lines.length;
+  } else if (type === "weekly") {
+    index = Math.floor(date.getDate() / 7) % lines.length;
+  } else if (type === "monthly") {
+    index = date.getMonth() % lines.length;
+  } else {
+    // yearly → full text (NO rotation)
+    return block;
+  }
 
   return {
-    text: list[index],
-    stats: {
-      ఆరోగ్యం: 70 + (index % 30),
-      సంపద: 60 + (index % 40),
-      కుటుంబం: 65 + (index % 35),
-      వృత్తి: 75 + (index % 25),
-    },
+    ...block,
+    text: lines[index], // ✅ ONE LINE ONLY
   };
 }

@@ -11,21 +11,49 @@ export default function RashiphalaluHome() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50 px-4 py-6">
-      <h1 className="text-xl font-bold text-orange-700 mb-6 text-center">
-        రాశిఫలాలు
-      </h1>
-
-      <div className="grid grid-cols-2 gap-4">
-        {TYPES.map((t) => (
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 via-white to-red-50 pb-24">
+      
+      {/* HEADER – FIXED */}
+      <div className="fixed top-0 left-0 right-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-xl">
+        <div className="flex items-center justify-between px-4 py-4">
           <button
-            key={t.key}
-            onClick={() => navigate(`/rashiphalalu/${t.key}`)}
-            className="bg-white rounded-2xl shadow-lg border border-orange-200 p-6 font-semibold text-orange-700 hover:bg-orange-50 transition"
+            onClick={() => navigate(-1)}
+            className="text-xl font-bold"
           >
-            {t.label}
+            ◀
           </button>
-        ))}
+
+          <div className="text-center">
+            <h1 className="text-lg font-bold">రాశి ఫలాలు</h1>
+            
+          </div>
+
+          <div className="w-6" />
+        </div>
+      </div>
+
+      {/* CONTENT */}
+      <div className="pt-24 px-4">
+        <div className="grid grid-cols-2 gap-4">
+          {TYPES.map((t) => (
+            <button
+              key={t.key}
+              onClick={() => navigate(`/rashiphalalu/${t.key}`)}
+              className="bg-white rounded-2xl shadow-lg border border-orange-200 p-6 font-semibold text-orange-700 hover:bg-orange-50 transition"
+            >
+              {t.label}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* BOTTOM NAV */}
+      <div className="fixed bottom-4 left-4 right-4 bg-white rounded-xl shadow-xl flex justify-around py-3 border border-orange-200">
+        <button onClick={() => navigate("/")}>హోమ్</button>
+        <button onClick={() => navigate("/festivals")}>పండుగలు</button>
+        <button className="font-bold text-orange-600">
+          రాశి ఫలాలు
+        </button>
       </div>
     </div>
   );
