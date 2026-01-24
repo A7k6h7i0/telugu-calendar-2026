@@ -157,14 +157,14 @@ export default function HomePage() {
     <div
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
-      className="min-h-screen bg-gradient-to-br from-slate-700 via-slate-600 to-gray-700 pb-24"
+      className="min-h-screen bg-gradient-to-br from-yellow-300 via-yellow-200 to-amber-300 pb-24"
     >
       {/* HEADER - Mobile First */}
       <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg">
         <div className="text-center pt-4 pb-2">
           <h1 className="text-3xl font-extrabold tracking-wide leading-tight">
             తెలుగు క్యాలెండర్ <br />
-            TELUGU CALENDER
+            TELUGU CALENDAR
           </h1>
           <p className="text-base font-serif font-bold mt-1.5 tracking-widest" style={{ letterSpacing: '0.15em' }}>
             by JKV JANARDHAN
@@ -195,8 +195,8 @@ export default function HomePage() {
         </div>
       </div>
 
-      {/* CALENDAR GRID - Mobile Optimized with Updated Background */}
-      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-orange-300 via-amber-200 to-yellow-200 shadow-lg p-3 border-4 border-orange-500">
+      {/* CALENDAR GRID - Mobile Optimized with Thick Yellow Background */}
+      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-yellow-300 via-yellow-200 to-amber-300 shadow-lg p-3 border-4 border-orange-500">
         {/* WEEK DAYS HEADER - Styled with English above Telugu */}
         <div className="grid grid-cols-7 gap-1 mb-2">
           {WEEK_DAYS.map((day, i) => (
@@ -206,7 +206,7 @@ export default function HomePage() {
                 text-center font-extrabold py-1.5 rounded-md flex flex-col items-center justify-center
                 ${i === 0 
                   ? "bg-red-500 text-white" 
-                  : "bg-amber-200 text-gray-800"
+                  : "bg-white text-gray-800"
                 }
               `}
             >
@@ -220,7 +220,7 @@ export default function HomePage() {
           ))}
         </div>
 
-        {/* DATES GRID - Properly Aligned with Rectangular Boxes */}
+        {/* DATES GRID - Light Gray Background for Date Cells */}
         <div className="grid grid-cols-7 gap-1">
           {calendarGrid.map((day, index) => {
             if (!day) {
@@ -247,15 +247,15 @@ export default function HomePage() {
                   ${
                     isSelected
                       ? "bg-orange-500 text-white scale-105 shadow-lg"
-                      : "bg-gradient-to-br from-gray-600 to-gray-700 text-white"
+                      : "bg-gradient-to-br from-gray-300 to-gray-400 text-gray-800"
                   }
-                  ${isSun && !isSelected ? "!text-red-400" : ""}
+                  ${isSun && !isSelected ? "!text-red-600" : ""}
                   ${isToday ? "ring-4 ring-yellow-400 ring-offset-2" : ""}
                 `}
               >
                 {day.date}
                 
-                {/* Moon Phase Indicator - Larger Size */}
+                {/* Moon Phase Indicator - Top Right */}
                 {moonPhase && (
                   <div className="absolute top-0.5 right-0.5">
                     {moonPhase === "pournami" ? (
@@ -266,12 +266,18 @@ export default function HomePage() {
                   </div>
                 )}
                 
-                {/* Ekadashi Indicator - Lord Shiva Trishul */}
+                {/* Ekadashi Indicator - Bottom Left - Transparent Background */}
                 {isEkadashi && (
-                  <div className="absolute top-0.5 left-0.5">
-                    <span className="text-base drop-shadow-lg" style={{ filter: 'drop-shadow(0 0 2px rgba(255,255,255,0.8))' }}>
-                      🔱
-                    </span>
+                  <div className="absolute bottom-0.5 left-0.5">
+                    <img 
+                      src="/assets/vishnu-sleeping.png" 
+                      alt="Vishnu Sleeping"
+                      className="w-5 h-5 object-contain drop-shadow-lg"
+                      style={{
+                        mixBlendMode: 'multiply',
+                        filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))'
+                      }}
+                    />
                   </div>
                 )}
               </button>
