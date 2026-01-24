@@ -112,9 +112,7 @@ export default function FestivalsPage() {
         <button className="font-bold text-orange-600 text-base">
           పండుగలు
         </button>
-        <button className="font-semibold text-gray-700 text-base active:scale-95 transition-transform">
-          పంచాంగం
-        </button>
+        <button onClick={()=>navigate("/rashiphalalu")}>రాశిఫలాలు</button>
       </div>
     </div>
   );
