@@ -336,7 +336,7 @@ export default function HomePage() {
           </div>
 
           {/* SUNRISE / SUNSET */}
-          <div className="grid grid-cols-2 gap-3">
+          {/* <div className="grid grid-cols-2 gap-3">
             <div className="rounded-lg bg-gradient-to-br from-orange-100 to-orange-50 border-2 border-orange-300 p-3 text-center">
               <p className="text-xs text-gray-600 mb-1 font-semibold">
                 సూర్యోదయం
@@ -354,7 +354,7 @@ export default function HomePage() {
                 {selectedDayData.panchangam.sunset}
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       )}
 

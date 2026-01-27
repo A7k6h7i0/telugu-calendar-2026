@@ -431,7 +431,6 @@ export const february2026 = {
     { date: 19, day: "గురు", festivals: ["శతభిష కార్తె", "శ్రీ రామకృష్ణ పరమహంస జయంతి", "రంజాన్ నెల ప్రారంభం"], panchangam: { tithi: "విదియ", nakshatram: "పూర్వాభాద్ర రా.08:52", sunrise: "6:26", sunset: "5:56", rahukalam: "13:30-15:00", yamagandam: "06:00-07:30", gulika: "" } },
     { date: 20, day: "శుక్ర", festivals: [], panchangam: { tithi: "తదియ", nakshatram: "ఉత్తరాభాద్ర", sunrise: "6:25", sunset: "5:57", rahukalam: "10:30-12:00", yamagandam: "15:00-16:30", gulika: "" } },
     { date: 21, day: "శని", festivals: [], panchangam: { tithi: "చవితి", nakshatram: "రేవతి", sunrise: "6:24", sunset: "5:57", rahukalam: "09:00-10:30", yamagandam: "13:30-15:00", gulika: "" } },
-    
     { date: 22, day: "ఆది", festivals: [], panchangam: { tithi: "పంచమి", nakshatram: "", sunrise: "6:24", sunset: "5:58", rahukalam: "16:30-18:00", yamagandam: "12:00-13:30", gulika: "" } },
     { date: 23, day: "సోమ", festivals: [], panchangam: { tithi: "షష్టి", nakshatram: "", sunrise: "6:23", sunset: "5:58", rahukalam: "07:30-09:00", yamagandam: "10:30-12:00", gulika: "" } },
     { date: 24, day: "మంగళ", festivals: [], panchangam: { tithi: "సప్తమి", nakshatram: "కృష్ణక", sunrise: "6:23", sunset: "5:58", rahukalam: "15:00-16:30", yamagandam: "09:00-10:30", gulika: "" } },
