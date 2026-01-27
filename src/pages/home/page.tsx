@@ -341,13 +341,18 @@ export default function HomePage() {
               <p className="text-xs text-gray-600 mb-1 font-semibold">
                 సూర్యోదయం
               </p>
-              <p className="text-xl font-extrabold text-orange-700">06:05</p>
+              <p className="text-xl font-extrabold text-orange-700">
+                {selectedDayData.panchangam.sunrise}
+              </p>
             </div>
+
             <div className="rounded-lg bg-gradient-to-br from-orange-100 to-orange-50 border-2 border-orange-300 p-3 text-center">
               <p className="text-xs text-gray-600 mb-1 font-semibold">
                 సూర్యాస్తమయం
               </p>
-              <p className="text-xl font-extrabold text-orange-700">06:30</p>
+              <p className="text-xl font-extrabold text-orange-700">
+                {selectedDayData.panchangam.sunset}
+              </p>
             </div>
           </div>
         </div>
