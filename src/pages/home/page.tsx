@@ -270,7 +270,7 @@ export default function HomePage() {
                 {isEkadashi && (
                   <div className="absolute bottom-0.5 left-0.5">
                     <img 
-                      src="/assets/vishnu-sleeping.png" 
+                      src="/assets/vishnu-sleeping.jpg" 
                       alt="Vishnu Sleeping"
                       className="w-5 h-5 object-contain drop-shadow-lg"
                       style={{
