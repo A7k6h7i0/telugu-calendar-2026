@@ -31,7 +31,7 @@ export const february2026 = {
     { date: 21, day: "శని", festivals: [], panchangam: { tithi: "చవితి మ.1.00 ", nakshatram: "రేవతి రా.7.07", sunrise: "6:24", sunset: "5:57", rahukalam: "09:00-10:30", yamagandam: "13:30-15:00", gulika: "" } },
     { date: 22, day: "ఆది", festivals: [], panchangam: { tithi: "పంచమి ఉ.11.09", nakshatram: "అశ్విని సా.5.54", sunrise: "6:24", sunset: "5:58", rahukalam: "16:30-18:00", yamagandam: "12:00-13:30", gulika: "" } },
     { date: 23, day: "సోమ", festivals: [], panchangam: { tithi: "షష్టి ఉ.9.09", nakshatram: "భరణి సా.4.33", sunrise: "6:23", sunset: "5:58", rahukalam: "07:30-09:00", yamagandam: "10:30-12:00", gulika: "" } },
-    { date: 24, day: "మంగళ", festivals: [], panchangam: { tithi: "సప్తమి ఉ.7.01", nakshatram: "కృష్ణక మ.3.07", sunrise: "6:23", sunset: "5:58", rahukalam: "15:00-16:30", yamagandam: "09:00-10:30", gulika: "" } },
+    { date: 24, day: "మంగళ", festivals: [], panchangam: { tithi: "సప్తమి ఉ.7.01", nakshatram: "కృతిక మ.3.07", sunrise: "6:23", sunset: "5:58", rahukalam: "15:00-16:30", yamagandam: "09:00-10:30", gulika: "" } },
     { date: 25, day: "బుధ", festivals: ["అవతార్ మెహర్ బాబ జయంతి"], panchangam: { tithi: "నవమి రా.2.40", nakshatram: "రోహిణి మ.01:23", sunrise: "6:22", sunset: "5:59", rahukalam: "12:00-13:30", yamagandam: "07:30-09:00", gulika: "" } },
     { date: 26, day: "గురు", festivals: [], panchangam: { tithi: "దశమి రా.12.40", nakshatram: "మృగశిర మ.12.01", sunrise: "6:21", sunset: "5:59", rahukalam: "13:30-15:00", yamagandam: "06:00-07:30", gulika: "" } },
     { date: 27, day: "శుక్ర", festivals: [], panchangam: { tithi: "ఏకాదశి రా.10.32", nakshatram: "ఆర్ద్ర రా.10.48", sunrise: "6:21", sunset: "5:59", rahukalam: "10:30-12:00", yamagandam: "15:00-16:30", gulika: "" } },

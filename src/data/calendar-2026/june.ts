@@ -5,8 +5,8 @@ export const june2026 = {
   year: 2026,
   samvatsaram: "పరాభవ",
   days: [
-    { date: 1, day: "సోమ", festivals: ["తెలంగాణ రాష్ట్ర అవతరణ దినోత్సవం"], panchangam: { tithi: "పాడ్యమి సా.04:37", nakshatram: "జ్యేష్ఠ రా.07:08", sunrise: "5:31", sunset: "6:31", rahukalam: "7:30 - 9:00", yamagandam: "10:30 - 12:00", gulika: "" } },
-    { date: 2, day: "మంగళ", festivals: [], panchangam: { tithi: "విదియ రా.07:01", nakshatram: "మూల రా.10:06", sunrise: "5:31", sunset: "6:31", rahukalam: "15:00-16:30", yamagandam: "9:00 - 10:30", gulika: "" } },
+    { date: 1, day: "సోమ", festivals: [], panchangam: { tithi: "పాడ్యమి సా.04:37", nakshatram: "జ్యేష్ఠ రా.07:08", sunrise: "5:31", sunset: "6:31", rahukalam: "7:30 - 9:00", yamagandam: "10:30 - 12:00", gulika: "" } },
+    { date: 2, day: "మంగళ", festivals: ["తెలంగాణ రాష్ట్ర అవతరణ దినోత్సవం"], panchangam: { tithi: "విదియ రా.07:01", nakshatram: "మూల రా.10:06", sunrise: "5:31", sunset: "6:31", rahukalam: "15:00-16:30", yamagandam: "9:00 - 10:30", gulika: "" } },
     { date: 3, day: "బుధ", festivals: [], panchangam: { tithi: "తదియ రా.09:21", nakshatram: "పూర్వాషాఢ రా.12:59", sunrise: "5:31", sunset: "6:31", rahukalam: "12:00-13:30", yamagandam: "7:30 - 9:00", gulika: "" } },
     { date: 4, day: "గురు", festivals: ["సంకటహర చతుర్థి"], panchangam: { tithi: "చవితి ఉ.11:30", nakshatram: "ఉత్తరాషాఢ రా.03:41", sunrise: "5:31", sunset: "6:31", rahukalam: "13:30-15:00", yamagandam: "6:00 - 7:30", gulika: "" } },
     { date: 5, day: "శుక్ర", festivals: [], panchangam: { tithi: "పంచమి రా.01:20", nakshatram: "శ్రవణం పూర్తి", sunrise: "5:31", sunset: "6:31", rahukalam: "10:30 - 12:00", yamagandam: "15:00-16:30", gulika: "" } },
