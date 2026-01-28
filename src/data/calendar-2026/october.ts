@@ -12,7 +12,7 @@ export const october2026 = {
     { date: 4, day: "ఆది", festivals: ["ప్రపంచ వన్యప్రాణి దినోత్సవం"], panchangam: { tithi: "నవమి తె.03:54", nakshatram: "పునర్వసు తె.12:13", sunrise: "5:51", sunset: "5:40", rahukalam: "12:00-13:30", yamagandam: "12:00-13:30", gulika: "" } },
     { date: 5, day: "సోమ", festivals: [], panchangam: { tithi: "దశమి తె.02:08", nakshatram: "పుష్యమి రా.11:09", sunrise: "5:52", sunset: "5:39", rahukalam: "7:30-9:00", yamagandam: "10:30-12:00", gulika: "" } },
     { date: 6, day: "మంగళ", festivals: [], panchangam: { tithi: "ఏకాదశి తె.12:35", nakshatram: "ఆశ్లేష రా.10:17", sunrise: "5:52", sunset: "5:39", rahukalam: "15:00-16:30", yamagandam: "9:00-10:30", gulika: "" } },
-    { date: 7, day: "బుధ", festivals: ["వాల్మీకి దినోత్సవం"], panchangam: { tithi: "ద్వాదశి రా.11:17", nakshatram: "మఖ రా.09:40", sunrise: "5:52", sunset: "5:38", rahukalam: "12:00-13:30", yamagandam: "7:30-9:00", gulika: "" } },
+    { date: 7, day: "బుధ", festivals: ["వాల్మీకి జయంతి"], panchangam: { tithi: "ద్వాదశి రా.11:17", nakshatram: "మఖ రా.09:40", sunrise: "5:52", sunset: "5:38", rahukalam: "12:00-13:30", yamagandam: "7:30-9:00", gulika: "" } },
 
     { date: 8, day: "గురు", festivals: [], panchangam: { tithi: "త్రయోదశి రా.10:16", nakshatram: "పూర్వ ఫల్గుణి రా.09:20", sunrise: "5:52", sunset: "5:37", rahukalam: "13:30-15:00", yamagandam: "6:00-7:30", gulika: "" } },
     { date: 9, day: "శుక్ర", festivals: ["మాస శివరాత్రి"], panchangam: { tithi: "చతుర్దశి రా.09:36", nakshatram: "ఉత్తర ఫల్గుణి రా.21:19", sunrise: "5:52", sunset: "5:36", rahukalam: "10:30-12:00", yamagandam: "15:00-16:30", gulika: "" } },

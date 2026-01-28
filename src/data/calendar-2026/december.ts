@@ -3,7 +3,7 @@ export const december2026 = {
   year: 2026,
   samvatsaram: "పరాభవ",
   days: [
-    { date: 1, day: "మంగళ", festivals: [], panchangam: { tithi: "అష్టమి రా.11:14", nakshatram: "మఖ ఉ.09:00", sunrise: "6:15", sunset: "5:17", rahukalam: "15:00 - 16:30", yamagandam: "9:00 - 10:30", gulika: "" } },
+    { date: 1, day: "మంగళ", festivals: ["ఎయిడ్స్ దినోత్సవం"], panchangam: { tithi: "అష్టమి రా.11:14", nakshatram: "మఖ ఉ.09:00", sunrise: "6:15", sunset: "5:17", rahukalam: "15:00 - 16:30", yamagandam: "9:00 - 10:30", gulika: "" } },
     { date: 2, day: "బుధ", festivals: [], panchangam: { tithi: "నవమి రా.10:52", nakshatram: "పుబ్బ ఉ.8:54", sunrise: "6:16", sunset: "5:17", rahukalam: "12:00-13:30", yamagandam:"7:30-9:00", gulika: "" } },
     { date: 3, day: "గురు", festivals: [], panchangam: { tithi: "దశమి ఉ.11:03", nakshatram: "ఉత్తర ఫల్గుణి ఉ.09:23", sunrise: "6:17", sunset: "5:17", rahukalam: "13:30 - 15:00", yamagandam: "06:00 : 7:30", gulika: "" } },
     { date: 4, day: "శుక్ర", festivals: ["ఉత్పన్న ఏకాదశి"], panchangam: { tithi: "ఏకాదశి రా.11:44", nakshatram: "", sunrise: "6:17", sunset: "5:17", rahukalam: "10:30 - 12:00", yamagandam: "15:00 - 16:30", gulika: "" } },
