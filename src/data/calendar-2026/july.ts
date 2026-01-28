@@ -29,9 +29,9 @@ export const july2026 = {
 
     { date: 22, day: "బుధ", festivals: [], panchangam: { tithi: "నవమి తె.07:03", nakshatram: "స్వాతి రా.11:03", sunrise: "5:36", sunset: "6:31", rahukalam: "12:00-13:30", yamagandam: "7:30-9:00", gulika: "" } },
     { date: 23, day: "గురు", festivals: ["బాల గంగాధర్ తిలక్ జయంతి"], panchangam: { tithi: "నవమి ఉ.07:03", nakshatram: "విశాఖ తె.01:42", sunrise: "5:37", sunset: "6:30", rahukalam: "13:30-15:00", yamagandam: "6:00-7:30", gulika: "" } },
-    { date: 24, day: "శుక్ర", festivals: [], panchangam: { tithi: "దశమి ఉ.09:13", nakshatram: "అనూరాధ మ.04:36", sunrise: "5:37", sunset: "6:30", rahukalam: "10:30-12:00", yamagandam: "15:00-16:30", gulika: "" } },
+    { date: 24, day: "శుక్ర", festivals: [], panchangam: { tithi: "దశమి ఉ.09:13", nakshatram: "అనూరాధ ఉ.04:36", sunrise: "5:37", sunset: "6:30", rahukalam: "10:30-12:00", yamagandam: "15:00-16:30", gulika: "" } },
     { date: 25, day: "శని", festivals: ["తొలి ఏకాదశి"], panchangam: { tithi: "ఏకాదశి ఉ.11:34", nakshatram: "జ్యేష్ట తె.07:34", sunrise: "5:37", sunset: "6:30", rahukalam: "9:00-10:30", yamagandam: "13:30-15:00", gulika: "" } },
-    { date: 26, day: "ఆది", festivals: ["బోనాలు"], panchangam: { tithi: "ద్వాదశి మ.01:58", nakshatram: "కృష్ణ ఉ.07:34", sunrise: "5:38", sunset: "6:29", rahukalam: "16:30-18:00", yamagandam: "12:00-13:30", gulika: "" } },
+    { date: 26, day: "ఆది", festivals: ["బోనాలు"], panchangam: { tithi: "ద్వాదశి మ.01:58", nakshatram: "కృతిక ఉ.07:34", sunrise: "5:38", sunset: "6:29", rahukalam: "16:30-18:00", yamagandam: "12:00-13:30", gulika: "" } },
     { date: 27, day: "సోమ", festivals: [], panchangam: { tithi: "త్రయోదశి సా.04:15", nakshatram: "మూల ఉ.10:28", sunrise: "5:38", sunset: "6:29", rahukalam: "7:30-9:00", yamagandam: "10:30-12:00", gulika: "" } },
     { date: 28, day: "మంగళ", festivals: [], panchangam: { tithi: "చతుర్దశి సా.06:19", nakshatram: "పూర్వాషాఢ మ.01:10", sunrise: "5:38", sunset: "6:29", rahukalam: "15:00-16:30", yamagandam: "9:00-10:30", gulika: "" } },
     { date: 29, day: "బుధ", festivals: ["గురు పూర్ణిమ"], panchangam: { tithi: "పౌర్ణమి రా.08:05", nakshatram: "ఉత్తరాషాఢ మ.03:36", sunrise: "5:39", sunset: "6:28", rahukalam: "12:00-13:30", yamagandam: "7:30-9:00", gulika: "" } },
