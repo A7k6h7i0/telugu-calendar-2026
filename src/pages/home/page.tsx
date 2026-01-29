@@ -568,7 +568,7 @@ export default function HomePage() {
       {/* HEADER - Mobile First */}
       <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg">
         <div className="text-center pt-1 pb-0">
-          <h1 className="text-xl font-extrabold tracking-wide leading-none">
+          <h1 className="text-xl font-extrabold tracking-wide leading-tight">
             తెలుగు  క్యాలెండర్<br />
             TELUGU CALENDAR
           </h1>
@@ -603,7 +603,7 @@ export default function HomePage() {
       </div>
 
       {/* CALENDAR GRID - Mobile Optimized with Thick Yellow Background */}
-      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-yellow-300 via-yellow-200 to-amber-300 shadow-lg p-3 border-4 border-orange-500 transform scale-90 origin-top">
+      <div className="mx-3 mt-2 rounded-2xl bg-gradient-to-br from-yellow-300 via-yellow-200 to-amber-300 shadow-lg p-3 border-4 border-orange-500 transform scale-90 origin-top">
         {/* WEEK DAYS HEADER - Styled with English above Telugu */}
         <div className="grid grid-cols-7 gap-1 mb-2">
           {WEEKDAYS.map((day, i) => (
