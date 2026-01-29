@@ -12,7 +12,7 @@ export const december2026 = {
     { date: 7, day: "సోమ", festivals: ["మాస శివరాత్రి"], panchangam: { tithi: "చతుర్దశి తె.4:12", nakshatram: "విశాఖ సా.03:48", sunrise: "6:19", sunset: "5:18", rahukalam: "7:30 : 09:00", yamagandam: "10:30 - 12:00", gulika: "" } },
 
     { date: 8, day: "మంగళ", festivals: ["అమావాస్య"], panchangam: { tithi: "అమావాస్య ఉ.06:21", nakshatram: "అనురాధ సా.6:15", sunrise: "6:20", sunset: "5:18", rahukalam: "15:00 - 16:30", yamagandam: "9:00-10:30.", gulika: "" } },
-    { date: 9, day: "బుధ", festivals: [], panchangam: { tithi: "పాడ్యమి పూర్తి", nakshatram: "జ్యేష్ట రా.09:00", sunrise: "6:20", sunset: "5:18", rahukalam: "12:00-13:30", yamagandam: "6.00-7.30", gulika: "" } },
+    { date: 9, day: "బుధ", festivals: [], panchangam: { tithi: "పాడ్యమి పూర్తి", nakshatram: "జ్యేష్ట రా.09:00", sunrise: "6:20", sunset: "5:18", rahukalam: "12:00-13:30", yamagandam: "7:30-9:00", gulika: "" } },
     { date: 10, day: "గురు", festivals: ["చంద్రోదయం"], panchangam: { tithi: "పాడ్యమి ఉ.08:46", nakshatram: "మూల రా.11:57", sunrise: "6:21", sunset: "5:19", rahukalam: "13:30-15:00", yamagandam: "18:00-19:30", gulika: "" } },
     { date: 11, day: "శుక్ర", festivals: [], panchangam: { tithi: "విదియ ఉ.11:23", nakshatram: "పూర్వాషాఢ తె.03:04", sunrise: "6:21", sunset: "5:19", rahukalam: "10:30-12:00", yamagandam: "15:00-16:30", gulika: "" } },
     { date: 12, day: "శని", festivals: [], panchangam: { tithi: "తదియ మ.02:06", nakshatram: "ఉత్తరాషాఢ ఉ.06:11", sunrise: "6:22", sunset: "5:19", rahukalam: "9:00-10:30", yamagandam: "13:30-15:00", gulika: "" } },

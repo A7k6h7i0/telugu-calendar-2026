@@ -174,14 +174,14 @@ export default function HomePage() {
             TELUGU CALENDAR
           </h1>
           <p
-            className="text-base font-serif font-bold mt-1.5 tracking-widest"
+            className="text-base font-serif font-bold mt-0 tracking-widest"
             style={{ letterSpacing: "0.15em" }}
           >
             by JKV JANARDHAN
           </p>
         </div>
 
-        <div className="flex items-center justify-between px-4 py-3">
+        <div className="flex items-center justify-between px-4 py-0">
           <button
             onClick={goPrevMonth}
             className="text-2xl font-bold active:scale-90 transition-transform px-2"
