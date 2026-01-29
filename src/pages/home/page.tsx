@@ -146,17 +146,30 @@ export default function HomePage() {
   };
 
   // Build calendar grid properly aligned to weekdays
+  // const buildCalendarGrid = () => {
+  //   const firstDay = currentMonth.days[0];
+  //   const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
+
+  //   const grid = Array(42).fill(null);
+  //   currentMonth.days.forEach((day, index) => {
+  //     grid[startDayIndex + index] = day;
+  //   });
+
+  //   return grid;
+  // };
+
   const buildCalendarGrid = () => {
-    const firstDay = currentMonth.days[0];
-    const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
+  const firstDay = currentMonth.days[0];
+  const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
 
-    const grid = Array(42).fill(null);
-    currentMonth.days.forEach((day, index) => {
-      grid[startDayIndex + index] = day;
-    });
+  // leading blanks + actual days only (no forced 42)
+  const grid = Array(startDayIndex).fill(null);
 
-    return grid;
-  };
+  currentMonth.days.forEach((day) => grid.push(day));
+
+  return grid;
+};
+
 
   const calendarGrid = buildCalendarGrid();
 
@@ -210,7 +223,7 @@ export default function HomePage() {
           {WEEKDAYS.map((day, i) => (
             <div
               key={day.telugu}
-              className={`text-center font-extrabold py-1.5 rounded-md flex flex-col items-center justify-center ${
+              className={`text-center font-extrabold py-1.5 rounded-md  flex flex-col items-center justify-center ${
                 i === 0 ? "bg-red-500 text-white" : "bg-white text-gray-800"
               }`}
             >
@@ -300,7 +313,7 @@ export default function HomePage() {
           )}
 
           {/* PANCHANG DETAILS */}
-          <div className="grid grid-cols-2 gap-3 text-sm text-gray-800 mb-4">
+          <div className="grid grid-cols-2 gap-3 text-sm text-gray-800 mb-0">
             <div className="bg-orange-50 p-3 rounded-lg border border-orange-200">
               <p className="text-xs text-gray-600 mb-1">తిథి</p>
               <p className="font-bold text-gray-800">{selectedDayData.panchangam.tithi}</p>
