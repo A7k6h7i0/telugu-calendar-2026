@@ -170,7 +170,8 @@ export default function HomePage() {
       <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg">
         <div className="text-center pt-4 pb-2">
           <h1 className="text-3xl font-extrabold tracking-wide leading-tight">
-            తెలుగు <br /> CALENDAR
+            తెలుగు  క్యాలెండర్<br /> 
+            TELUGU CALENDAR
           </h1>
           <p
             className="text-base font-serif font-bold mt-1.5 tracking-widest"
