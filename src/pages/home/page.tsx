@@ -1,3 +1,4 @@
+
 // import React, { useEffect, useRef, useState } from "react";
 // import { useNavigate, useSearchParams } from "react-router-dom";
 
@@ -54,7 +55,16 @@
 
 //   // ✅ NEW: read month from URL so Home restores the last-selected month
 //   const urlMonthIndex = searchParams.get("month");
+
+//   // ✅ NEW: detect fresh app open vs in-app navigation using sessionStorage
+//   const SESSION_KEY = "tc_app_session_started";
+//   const hasSession = sessionStorage.getItem(SESSION_KEY) === "1";
+
 //   const initialMonthIndex = (() => {
+//     // If this is a fresh open (no session yet), ignore URL month and start from today
+//     if (!hasSession) return todayMonthIndex;
+
+//     // If already in a running session, allow restoring month from URL
 //     if (urlMonthIndex !== null) {
 //       const parsed = parseInt(urlMonthIndex, 10);
 //       if (!Number.isNaN(parsed) && parsed >= 0 && parsed <= 11) return parsed;
@@ -68,6 +78,11 @@
 //   const [selectedDate, setSelectedDate] = useState(
 //     is2026 && monthIndex === todayMonthIndex ? todayDate : currentMonth.days[0].date
 //   );
+
+//   // ✅ NEW: mark session started once component is mounted
+//   useEffect(() => {
+//     sessionStorage.setItem(SESSION_KEY, "1");
+//   }, []);
 
 //   // ✅ NEW: when monthIndex changes (including from URL), keep selectedDate valid for that month
 //   useEffect(() => {
@@ -145,31 +160,17 @@
 //     );
 //   };
 
-//   // Build calendar grid properly aligned to weekdays
-//   // const buildCalendarGrid = () => {
-//   //   const firstDay = currentMonth.days[0];
-//   //   const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
-
-//   //   const grid = Array(42).fill(null);
-//   //   currentMonth.days.forEach((day, index) => {
-//   //     grid[startDayIndex + index] = day;
-//   //   });
-
-//   //   return grid;
-//   // };
-
 //   const buildCalendarGrid = () => {
-//   const firstDay = currentMonth.days[0];
-//   const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
+//     const firstDay = currentMonth.days[0];
+//     const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
 
-//   // leading blanks + actual days only (no forced 42)
-//   const grid = Array(startDayIndex).fill(null);
+//     // leading blanks + actual days only (no forced 42)
+//     const grid = Array(startDayIndex).fill(null);
 
-//   currentMonth.days.forEach((day) => grid.push(day));
+//     currentMonth.days.forEach((day) => grid.push(day));
 
-//   return grid;
-// };
-
+//     return grid;
+//   };
 
 //   const calendarGrid = buildCalendarGrid();
 
@@ -181,13 +182,13 @@
 //     >
 //       {/* HEADER - Mobile First */}
 //       <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg">
-//         <div className="text-center pt-4 pb-2">
-//           <h1 className="text-3xl font-extrabold tracking-wide leading-tight">
-//             తెలుగు  క్యాలెండర్<br /> 
+//         <div className="text-center pt-1 pb-0">
+//           <h1 className="text-xl font-extrabold tracking-wide leading-none">
+//             తెలుగు  క్యాలెండర్<br />
 //             TELUGU CALENDAR
 //           </h1>
 //           <p
-//             className="text-base font-serif font-bold mt-0 tracking-widest"
+//             className="text-xs font-serif font-bold mt-0 tracking-widest"
 //             style={{ letterSpacing: "0.15em" }}
 //           >
 //             by JKV JANARDHAN
@@ -383,12 +384,6 @@
 
 
 
-
-
-
-
-
-
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
@@ -550,19 +545,6 @@ export default function HomePage() {
     );
   };
 
-  // Build calendar grid properly aligned to weekdays
-  // const buildCalendarGrid = () => {
-  //   const firstDay = currentMonth.days[0];
-  //   const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
-
-  //   const grid = Array(42).fill(null);
-  //   currentMonth.days.forEach((day, index) => {
-  //     grid[startDayIndex + index] = day;
-  //   });
-
-  //   return grid;
-  // };
-
   const buildCalendarGrid = () => {
     const firstDay = currentMonth.days[0];
     const startDayIndex = WEEKDAYS.findIndex((day) => day.telugu === firstDay.day);
@@ -585,13 +567,13 @@ export default function HomePage() {
     >
       {/* HEADER - Mobile First */}
       <div className="sticky top-0 z-20 bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg">
-        <div className="text-center pt-4 pb-2">
-          <h1 className="text-3xl font-extrabold tracking-wide leading-tight">
+        <div className="text-center pt-1 pb-0">
+          <h1 className="text-xl font-extrabold tracking-wide leading-none">
             తెలుగు  క్యాలెండర్<br />
             TELUGU CALENDAR
           </h1>
           <p
-            className="text-base font-serif font-bold mt-0 tracking-widest"
+            className="text-xs font-serif font-bold mt-0 tracking-widest"
             style={{ letterSpacing: "0.15em" }}
           >
             by JKV JANARDHAN
@@ -621,7 +603,7 @@ export default function HomePage() {
       </div>
 
       {/* CALENDAR GRID - Mobile Optimized with Thick Yellow Background */}
-      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-yellow-300 via-yellow-200 to-amber-300 shadow-lg p-3 border-4 border-orange-500">
+      <div className="mx-3 mt-4 rounded-2xl bg-gradient-to-br from-yellow-300 via-yellow-200 to-amber-300 shadow-lg p-3 border-4 border-orange-500 transform scale-90 origin-top">
         {/* WEEK DAYS HEADER - Styled with English above Telugu */}
         <div className="grid grid-cols-7 gap-1 mb-2">
           {WEEKDAYS.map((day, i) => (
@@ -761,7 +743,7 @@ export default function HomePage() {
       {/* BOTTOM NAV - Mobile First */}
       <div className="fixed bottom-3 left-3 right-3 bg-white rounded-xl shadow-lg flex justify-around py-3 border-2 border-orange-300">
         <button className="font-bold text-orange-600 text-base active:scale-95 transition-transform">
-          Home
+          హోమ్
         </button>
 
         {/* ✅ already passing monthIndex (kept as-is) */}
@@ -783,4 +765,8 @@ export default function HomePage() {
     </div>
   );
 }
+
+
+
+
 

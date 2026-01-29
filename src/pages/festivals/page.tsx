@@ -65,7 +65,7 @@ export default function FestivalsPage() {
           </button>
 
           <div className="text-center">
-            <h1 className="text-xl font-bold">{teluguMonths[selectedMonthIndex]} పండుగలు</h1>
+            <h1 className="text-xl font-bold">{teluguMonths[selectedMonthIndex]} పండుగలు మరియు ముఖ్యమైన దినాలు</h1>
             <p className="text-xs opacity-90">{selectedMonth.samvatsaram} సంవత్సరం</p>
           </div>
 
