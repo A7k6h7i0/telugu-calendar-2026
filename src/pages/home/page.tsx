@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 
@@ -109,16 +108,13 @@ export default function HomePage() {
     setSelectedDate(MONTHS_2026[next].days[0].date);
   };
 
-  // ---------- SWIPE ----------
+  // ---------- SWIPE - DISABLED FOR MONTH CHANGE ----------
   const handleTouchStart = (e: React.TouchEvent) => {
     touchStartX.current = e.touches[0].clientX;
   };
 
   const handleTouchEnd = (e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const diff = touchStartX.current - e.changedTouches[0].clientX;
-    if (diff > 50) goNextMonth();
-    if (diff < -50) goPrevMonth();
+    // Swipe functionality disabled - no month change on swipe
     touchStartX.current = null;
   };
 
@@ -221,12 +217,10 @@ export default function HomePage() {
       <div className="mx-3 mt-2 rounded-2xl bg-gradient-to-br from-yellow-300 via-yellow-200 to-amber-300 shadow-lg p-3 border-4 border-orange-500 transform scale-90 origin-top">
         {/* WEEK DAYS HEADER - Styled with English above Telugu */}
         <div className="grid grid-cols-7 gap-1 mb-2">
-          {WEEKDAYS.map((day, i) => (
+          {WEEKDAYS.map((day) => (
             <div
               key={day.telugu}
-              className={`text-center font-extrabold py-1.5 rounded-md  flex flex-col items-center justify-center ${
-                i === 0 ? "bg-red-500 text-white" : "bg-white text-gray-800"
-              }`}
+              className="text-center font-extrabold py-1.5 rounded-md bg-white text-gray-800 flex flex-col items-center justify-center"
             >
               <div className="text-xs font-bold leading-tight">{day.english}</div>
               <div className="leading-tight text-xs">{day.telugu}</div>
@@ -240,7 +234,6 @@ export default function HomePage() {
             if (!day) return <div key={`empty-${index}`} className="aspect-square" />;
 
             const isSelected = day.date === selectedDate;
-            const isSun = day.day === "ఆది";
             const isToday = is2026 && monthIndex === todayMonthIndex && day.date === todayDate;
             const moonPhase = getMoonPhase(day.date);
             const isEkadashi = hasEkadashi(day.date);
@@ -255,7 +248,6 @@ export default function HomePage() {
                       ? "bg-orange-500 text-white scale-105 shadow-lg"
                       : "bg-gradient-to-br from-gray-300 to-gray-400 text-gray-800"
                   }
-                  ${isSun && !isSelected ? "text-red-600" : ""}
                   ${isToday ? "ring-4 ring-yellow-400 ring-offset-2" : ""}
                 `}
               >
@@ -380,8 +372,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-
-
-
-
